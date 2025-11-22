@@ -56,7 +56,7 @@ const Cart = () => {
         <p className="text-secondary mb-8">Browse our menu and add some delicious items</p>
         <a
           href="/menu"
-          className="bg-gold hover:bg-gold-dark text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
+          className="btn btn-gold text-lg"
         >
           Browse Menu
         </a>
@@ -122,7 +122,7 @@ const Cart = () => {
               type="text"
               value={deliveryDetails.name}
               onChange={(e) => setDeliveryDetails(prev => ({ ...prev, name: e.target.value }))}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input"
               required
             />
           </div>
@@ -133,7 +133,7 @@ const Cart = () => {
               type="tel"
               value={deliveryDetails.phone}
               onChange={(e) => setDeliveryDetails(prev => ({ ...prev, phone: e.target.value }))}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input"
               required
             />
           </div>
@@ -144,7 +144,7 @@ const Cart = () => {
               value={deliveryDetails.address}
               onChange={(e) => setDeliveryDetails(prev => ({ ...prev, address: e.target.value }))}
               rows={3}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input textarea"
               required
             />
           </div>
@@ -155,7 +155,7 @@ const Cart = () => {
               value={deliveryDetails.instructions}
               onChange={(e) => setDeliveryDetails(prev => ({ ...prev, instructions: e.target.value }))}
               rows={2}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input textarea"
             />
           </div>
 
@@ -185,7 +185,7 @@ const Cart = () => {
 
             <button
               onClick={handleCheckout}
-              className="w-full bg-gold hover:bg-gold-dark text-gray-900 font-bold py-4 px-6 rounded-lg text-lg mt-6 transition duration-200"
+              className="btn btn-gold w-full text-lg mt-6"
             >
               Place Order • ₹{(getTotalPrice() + 30 + (getTotalPrice() * 0.05)).toFixed(2)}
             </button>

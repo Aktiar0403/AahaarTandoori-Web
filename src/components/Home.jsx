@@ -19,7 +19,7 @@ const Home = () => {
         <p className="text-xl text-gray-300 mb-8">Experience the finest Indian cuisine</p>
         <Link
           to="/menu"
-          className="bg-gold hover:bg-gold-dark text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
+          className="btn btn-gold text-lg"
         >
           Order Now
         </Link>
@@ -39,7 +39,7 @@ const Home = () => {
                   <span className="text-2xl font-bold text-gold">₹{item.price}</span>
                   <Link
                     to="/menu"
-                    className="bg-gold hover:bg-gold-dark text-gray-900 font-bold py-2 px-4 rounded transition duration-200"
+                    className="btn btn-gold"
                   >
                     Order
                   </Link>
@@ -58,7 +58,7 @@ const Home = () => {
             <Link
               key={category.id}
               to="/menu"
-              className="bg-card rounded-2xl p-6 text-center hover:bg-gray-700 transition duration-200"
+              className="bg-card rounded-2xl p-6 text-center hover:bg-gray-700 transition"
             >
               <h3 className="text-lg font-bold text-gold mb-2">{category.name}</h3>
               <p className="text-secondary">

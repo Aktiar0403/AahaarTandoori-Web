@@ -23,11 +23,11 @@ const Layout = ({ children }) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gold">Aahaar Tandoori</h1>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4">
               <span className="text-white">Welcome, {user?.mobileNumber}</span>
               <button
                 onClick={handleLogout}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+                className="btn btn-red"
               >
                 Logout
               </button>
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
       {/* Navigation */}
       <nav className="bg-gray-800 border-b border-gray-700">
         <div className="container mx-auto px-4">
-          <div className="flex space-x-8">
+          <div className="flex gap-8">
             <Link
               to="/"
               className={`py-4 px-2 border-b-2 font-medium text-sm ${

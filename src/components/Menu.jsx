@@ -52,31 +52,25 @@ const Menu = () => {
               placeholder="Search menu items..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input"
             />
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => setVegFilter('all')}
-              className={`px-4 py-2 rounded-lg ${
-                vegFilter === 'all' ? 'bg-gold text-gray-900' : 'bg-gray-700 text-white'
-              }`}
+              className={`btn ${vegFilter === 'all' ? 'btn-gold' : 'btn-gray'}`}
             >
               All
             </button>
             <button
               onClick={() => setVegFilter('veg')}
-              className={`px-4 py-2 rounded-lg ${
-                vegFilter === 'veg' ? 'bg-gold text-gray-900' : 'bg-gray-700 text-white'
-              }`}
+              className={`btn ${vegFilter === 'veg' ? 'btn-gold' : 'btn-gray'}`}
             >
               Veg
             </button>
             <button
               onClick={() => setVegFilter('nonveg')}
-              className={`px-4 py-2 rounded-lg ${
-                vegFilter === 'nonveg' ? 'bg-gold text-gray-900' : 'bg-gray-700 text-white'
-              }`}
+              className={`btn ${vegFilter === 'nonveg' ? 'btn-gold' : 'btn-gray'}`}
             >
               Non-Veg
             </button>
@@ -87,9 +81,7 @@ const Menu = () => {
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`px-4 py-2 rounded-lg ${
-              selectedCategory === 'all' ? 'bg-gold text-gray-900' : 'bg-gray-700 text-white'
-            }`}
+            className={`btn ${selectedCategory === 'all' ? 'btn-gold' : 'btn-gray'}`}
           >
             All
           </button>
@@ -97,9 +89,7 @@ const Menu = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-lg ${
-                selectedCategory === category.id ? 'bg-gold text-gray-900' : 'bg-gray-700 text-white'
-              }`}
+              className={`btn ${selectedCategory === category.id ? 'btn-gold' : 'btn-gray'}`}
             >
               {category.name}
             </button>
@@ -119,7 +109,7 @@ const Menu = () => {
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                      <span className={`inline-block w-3 h-3 rounded-full ${item.isVeg ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                      <span className={`veg-indicator ${item.isVeg ? 'bg-green-500' : 'bg-red-500'}`}></span>
                     </div>
                     <p className="text-secondary mb-4">{item.description}</p>
                     
@@ -133,21 +123,21 @@ const Menu = () => {
                         {item.halfPrice && (
                           <button
                             onClick={() => addToCart(item, 'half')}
-                            className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded transition duration-200"
+                            className="btn btn-gray"
                           >
                             Half (₹{item.halfPrice})
                           </button>
                         )}
                         <button
                           onClick={() => addToCart(item, 'full')}
-                          className="bg-gold hover:bg-gold-dark text-gray-900 px-4 py-2 rounded transition duration-200"
+                          className="btn btn-gold"
                         >
                           Add to Cart
                         </button>
                       </div>
-                      <div className="flex gap-1">
+                      <div className="spicy-level">
                         {Array.from({ length: 3 }, (_, i) => (
-                          <span key={i} className={i < item.spicyLevel ? 'text-red-500' : 'text-gray-600'}>
+                          <span key={i} className={i < item.spicyLevel ? 'active' : ''}>
                             🌶
                           </span>
                         ))}

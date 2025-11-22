@@ -39,7 +39,7 @@ const Admin = () => {
         </div>
         <button
           onClick={handleLogout}
-          className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg"
+          className="btn btn-red"
         >
           Logout
         </button>
@@ -84,8 +84,8 @@ const Admin = () => {
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="text-lg font-bold text-white">{item.name}</h3>
                           <div className="flex items-center gap-2">
-                            <span className={`inline-block w-3 h-3 rounded-full ${item.isVeg ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                            <span className={`px-2 py-1 rounded text-xs ${item.available ? 'bg-green-900 text-green-300' : 'bg-red-900 text-red-300'}`}>
+                            <span className={`veg-indicator ${item.isVeg ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                            <span className={`px-2 py-1 rounded text-xs ${item.available ? 'bg-green-700 text-green-300' : 'bg-red-700 text-red-300'}`}>
                               {item.available ? 'Available' : 'Unavailable'}
                             </span>
                           </div>
@@ -95,14 +95,14 @@ const Admin = () => {
                         <div className="flex gap-2 mb-4">
                           <button
                             onClick={() => handleEditPrice(category.id, item)}
-                            className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm"
+                            className="btn btn-gray text-sm"
                           >
                             Full: ₹{item.price}
                           </button>
                           {item.halfPrice && (
                             <button
                               onClick={() => handleEditHalfPrice(category.id, item)}
-                              className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm"
+                              className="btn btn-gray text-sm"
                             >
                               Half: ₹{item.halfPrice}
                             </button>
@@ -112,11 +112,7 @@ const Admin = () => {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleToggleAvailability(category.id, item.id, item.available)}
-                            className={`px-4 py-2 rounded text-sm ${
-                              item.available 
-                                ? 'bg-red-600 hover:bg-red-700 text-white' 
-                                : 'bg-green-600 hover:bg-green-700 text-white'
-                            }`}
+                            className={`btn ${item.available ? 'btn-red' : 'btn-green'}`}
                           >
                             {item.available ? 'Mark Unavailable' : 'Mark Available'}
                           </button>

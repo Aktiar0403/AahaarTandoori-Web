@@ -22,16 +22,16 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-gray-800 rounded-2xl shadow-2xl p-8">
+    <div className="min-h-screen flex items-center justify-center p-4 gradient-bg">
+      <div className="max-w-md w-full bg-card rounded-2xl shadow-2xl p-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gold mb-2">Aahaar</h1>
-          <p className="text-gray-400">Tandoori Restaurant</p>
+          <p className="text-secondary">Tandoori Restaurant</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
-            <div className="bg-red-900 border border-red-700 text-white px-4 py-3 rounded">
+            <div className="bg-red-700 border border-red-600 text-white px-4 py-3 rounded-lg">
               {error}
             </div>
           )}
@@ -44,7 +44,7 @@ const Login = () => {
               type="tel"
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input"
               placeholder="Enter your mobile number"
               required
             />
@@ -58,7 +58,7 @@ const Login = () => {
               type="password"
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold"
+              className="input"
               placeholder="Enter secret code"
               required
             />
@@ -66,7 +66,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-gold hover:bg-gold-dark text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200"
+            className="btn btn-gold w-full"
           >
             Login
           </button>
