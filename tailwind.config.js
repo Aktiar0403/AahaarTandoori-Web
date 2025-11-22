@@ -11,6 +11,7 @@ export default {
         'gold-dark': '#b8941f',
         'bg-dark': '#1a1a1a',
         'card-bg': '#2d1b0e',
+        'text-secondary': '#8b7355',
       }
     },
   },
